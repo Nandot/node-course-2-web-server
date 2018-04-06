@@ -7,6 +7,9 @@ const hbs = require('hbs');
 // file handlign module
 const fs = require('fs');
 
+// setup contacts for dynamic port
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 // register partials hbs feature
@@ -84,7 +87,15 @@ app.get('/home', (req,res) => {
 
 });
 
+app.get('/projects', (req,res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
+  });
+
+
+});
+
 // bind the app to a port on the given machine - port 3000 common for dev
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
