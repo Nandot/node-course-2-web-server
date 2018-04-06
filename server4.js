@@ -96,6 +96,6 @@ app.get('/projects', (req,res) => {
 });
 
 // bind the app to a port on the given machine - port 3000 common for dev
-app.listen(port, () => {
-  console.log(`Server is up on port ${port}`);
+app.listen(3000, () => {
+  console.log('Server is up on port 3000');
 });
